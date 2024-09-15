@@ -200,7 +200,8 @@ function saveInputs() {
 }
 
 function writeInputs() {
-	loadInputs()
+	if (!loadInputs()) 
+		return
 
 	for (let i = 0; i < 20; i++) {
 		document.getElementById("plot"+i).valueAsNumber = people[i]
@@ -217,12 +218,16 @@ function writeInputs() {
 }
 
 function loadInputs() {
+	if (localStorage.getItem("carts") === null)
+		return false
+	
 	people = JSON.parse(localStorage.getItem("people"))
 	wells = JSON.parse(localStorage.getItem("wells"))
 	carriersCount = localStorage.getItem("carriersCount")
 	wagonsCount = localStorage.getItem("wagonsCount")
 	efficency = localStorage.getItem("efficency")
 	carts = localStorage.getItem("carts")
+	return true
 }
 
 function updateEfficency() {
