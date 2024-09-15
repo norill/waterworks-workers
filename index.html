@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  /*width: 100%;*/
+}
+
+td, th {
+  /*border: 1px solid #dddddd;*/
+  text-align: center;
+  /*padding: 4px;*/
+}
+
+input[type=number] {
+  width: 32px;
+}
+
+.well {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #dddddd;
+  border-radius: 4em;
+}
+
+.plot {
+  border: 1px solid #444;
+  width: 90px;
+  height: 90px;
+}
+
+.plotV {
+  border: 1px solid #444;
+  width: 5%;
+}
+
+.plotH {
+  border: 1px solid #444;
+  width: 10%;
+}
+
+</style>
+<script type="text/javascript" src="waterworks.js"></script>
+<!-- <script type="text/javascript" src="placements.js"></script> -->
+<!-- <script type="text/javascript" src="waters.js"></script> -->
+</head>
+<body onload="onload()">
+
+<h2>Waterworks worker placer</h2>
+
+<table>
+  <tr>
+    <td class="well" id="well0" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well1" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well2" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well3" onClick="cycle(this)"></td>
+    <td colspan="3"> </td>
+    <td class="well" id="well4" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well5" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well6" onClick="cycle(this)"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="plot"><span id="plot0span"></span><br><input type="number" id="plot0" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot1span"></span><br><input type="number" id="plot1" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot2span"></span><br><input type="number" id="plot2" min="1" value="1"></td>
+    <td></td>
+    <td colspan="3" class="plot"><span id="plot3span"></span><br><input type="number" id="plot3" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot4span"></span><br><input type="number" id="plot4" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot5span"></span><br><input type="number" id="plot5" min="1" value="1"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="well" id="well7" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well8" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well9" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well10" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well11" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well12" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well13" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well14" onClick="cycle(this)"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="plotH"><span id="plot6span"></span><br><input type="number" id="plot6" min="1" value="1"></td>
+    <td></td>
+    <td rowspan="3" class="plot"><span id="plot8span"></span><br><input type="number" id="plot8" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+    <td rowspan="3" class="plot"><span id="plot9span"></span><br><input type="number" id="plot9" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+    <td rowspan="3" class="plotV"><span id="plot10span"></span><br><input type="number" id="plot10" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+    <td rowspan="3" class="plotV"><span id="plot11span"></span><br><input type="number" id="plot11" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+    <td rowspan="3" class="plot"><span id="plot12span"></span><br><input type="number" id="plot12" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+    <td rowspan="3" class="plot"><span id="plot13span"></span><br><input type="number" id="plot13" min="1" value="1"></td>
+    <td rowspan="3"> </td>
+  </tr>
+  <tr>
+    <td class="well" id="well15" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well16" onClick="cycle(this)"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="plotH"><span id="plot7span"></span><br><input type="number" id="plot7" min="1" value="1"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="well" id="well17" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well18" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well19" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well20" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well21" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well22" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well23" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well24" onClick="cycle(this)"></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="plot"><span id="plot14span"></span><br><input type="number" id="plot14" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot15span"></span><br><input type="number" id="plot15" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot16span"></span><br><input type="number" id="plot16" min="1" value="1"></td>
+    <td></td>
+    <td colspan="3" class="plot"><span id="plot17span"></span><br><input type="number" id="plot17" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot18span"></span><br><input type="number" id="plot18" min="1" value="1"></td>
+    <td></td>
+    <td class="plot"><span id="plot19span"></span><br><input type="number" id="plot19" min="1" value="1"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td class="well" id="well25" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well26" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well27" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well28" onClick="cycle(this)"></td>
+    <td colspan="3"> </td>
+    <td class="well" id="well29" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well30" onClick="cycle(this)"></td>
+    <td></td>
+    <td class="well" id="well31" onClick="cycle(this)"></td>
+  </tr>
+</table>
+<br>
+Influence: <span id="influence">0</span><br>
+Population: <span id="population">0</span><br>
+Carriers: <input type="number" id="carriers" min="0" max="7" value="7"> <input type="checkbox" id="carts"><label for="carts">Carts upgrade</label><br>
+Wagons: <input type="number" id="wagons" min="0" max="3" value="0"><br>
+Waterwork efficency: <input type="number" id="efficency" min="0" max="8" value="0" onChange="updateEfficency()"><br>
+<input type="button" id="place" value="Loading" onClick="place()" disabled>
+
+</body>
+</html>
+
